@@ -73,48 +73,72 @@ function ensureDataFile() {
     [executionFile, path.join(seedDataDir, "executions.json")],
   ].forEach(([target, seed]) => {
     if (fs.existsSync(target)) return;
-    fs.writeFileSync(target, fs.existsSync(seed) ? fs.readFileSync(seed, "utf8") : "[]\n");
+    try {
+      fs.writeFileSync(target, fs.existsSync(seed) ? fs.readFileSync(seed, "utf8") : "[]\n", { flag: "wx" });
+    } catch (error) {
+      if (error.code !== "EEXIST") throw error;
+    }
   });
 }
 
-function readMemories() {
+function readJsonArray(file, seedFile) {
   ensureDataFile();
-  return JSON.parse(fs.readFileSync(memoryFile, "utf8")).map(normalizeMemory);
+  const sources = [file, seedFile].filter(Boolean);
+  let lastError;
+
+  for (let attempt = 0; attempt < 3; attempt += 1) {
+    for (const source of sources) {
+      try {
+        if (!fs.existsSync(source)) continue;
+        const parsed = JSON.parse(fs.readFileSync(source, "utf8"));
+        return Array.isArray(parsed) ? parsed : [];
+      } catch (error) {
+        lastError = error;
+      }
+    }
+  }
+
+  if (lastError && !process.env.VERCEL) throw lastError;
+  return [];
+}
+
+function writeJsonArray(file, value) {
+  ensureDataFile();
+  const tmp = `${file}.${process.pid}.${Date.now()}.${Math.random().toString(16).slice(2)}.tmp`;
+  fs.writeFileSync(tmp, `${JSON.stringify(value, null, 2)}\n`);
+  fs.renameSync(tmp, file);
+}
+
+function readMemories() {
+  return readJsonArray(memoryFile, path.join(seedDataDir, "memories.json")).map(normalizeMemory);
 }
 
 function readImports() {
-  ensureDataFile();
-  return JSON.parse(fs.readFileSync(importFile, "utf8"));
+  return readJsonArray(importFile, path.join(seedDataDir, "imports.json"));
 }
 
 function writeImports(imports) {
-  ensureDataFile();
-  fs.writeFileSync(importFile, `${JSON.stringify(imports, null, 2)}\n`);
+  writeJsonArray(importFile, imports);
 }
 
 function readDecisions() {
-  ensureDataFile();
-  return JSON.parse(fs.readFileSync(decisionFile, "utf8"));
+  return readJsonArray(decisionFile, path.join(seedDataDir, "decisions.json"));
 }
 
 function writeDecisions(decisions) {
-  ensureDataFile();
-  fs.writeFileSync(decisionFile, `${JSON.stringify(decisions, null, 2)}\n`);
+  writeJsonArray(decisionFile, decisions);
 }
 
 function readExecutions() {
-  ensureDataFile();
-  return JSON.parse(fs.readFileSync(executionFile, "utf8"));
+  return readJsonArray(executionFile, path.join(seedDataDir, "executions.json"));
 }
 
 function writeExecutions(executions) {
-  ensureDataFile();
-  fs.writeFileSync(executionFile, `${JSON.stringify(executions, null, 2)}\n`);
+  writeJsonArray(executionFile, executions);
 }
 
 function writeMemories(memories) {
-  ensureDataFile();
-  fs.writeFileSync(memoryFile, `${JSON.stringify(memories, null, 2)}\n`);
+  writeJsonArray(memoryFile, memories);
 }
 
 function normalizeMemory(memory) {
