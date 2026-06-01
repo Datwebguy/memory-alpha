@@ -11,11 +11,9 @@ function dispatch(fallbackPath) {
       const protocol = req.headers["x-forwarded-proto"] || "https";
       const host = req.headers.host || "memoryalpha.vercel.app";
       const incoming = new URL(req.url || fallbackPath, `${protocol}://${host}`);
-      let pathname = incoming.pathname;
-      if (pathname.includes("[")) {
-        const id = req.query && (req.query.id || req.query.memoryId);
-        pathname = id && fallbackPath.includes(":id") ? fallbackPath.replace(":id", encodeURIComponent(id)) : fallbackPath;
-      }
+      const rewrittenPath = incoming.searchParams.get("path");
+      const pathname = rewrittenPath ? `/api/${rewrittenPath}` : incoming.pathname;
+      incoming.searchParams.delete("path");
       const url = new URL(`${pathname}${incoming.search}`, `${protocol}://${host}`);
       await handleApi(req, res, url);
     } catch (error) {
