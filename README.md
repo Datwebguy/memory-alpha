@@ -386,17 +386,35 @@ Authenticated exchange execution is intentionally separated from the public demo
 
 ## Vercel Deployment Notes
 
-The current project uses a single long-running Node.js server in `server.cjs`. That is excellent for local preview, but Vercel expects static assets plus serverless API functions.
+The project includes Vercel function entrypoints under `/api` and a `vercel.json` file for routing, headers, and function file inclusion.
 
-Before deploying to Vercel, the server should be adapted in one of these ways:
+Vercel deployment shape:
 
-- Keep HTML, CSS, and client JavaScript as static files.
-- Move API routes from `server.cjs` into Vercel-compatible functions under `/api`.
-- Replace local JSON writes with durable hosted storage.
-- Add `vercel.json` routing for static pages and API functions.
-- Set environment variables in the Vercel dashboard.
+- Static HTML, CSS, client JavaScript, SVG, and docs are served as static files.
+- `/api/[...path].js` forwards API requests into the same `handleApi` function used by the local server.
+- `server.cjs` still runs locally with `preview.cmd`, but it no longer starts a listener when imported by Vercel.
+- Seed data files in `data/**` are included in the serverless function bundle.
+- On Vercel, writeable runtime state uses `/tmp/memoryalpha-data` through the `VERCEL` environment flag.
 
-This keeps the deployed version real and reliable instead of pretending local JSON storage is production infrastructure.
+Important production note: `/tmp` storage is runtime storage, not a permanent database. It is acceptable for a hackathon preview that shows live Bitget data and working platform flows, but production MemoryAlpha should move memory packets, imports, decisions, and executions into durable storage.
+
+Recommended durable storage options:
+
+- Vercel Postgres or another hosted Postgres provider.
+- Supabase.
+- Neon.
+- PlanetScale.
+- Vercel Blob for JSON document storage if relational queries are not needed.
+
+Set environment variables in the Vercel dashboard:
+
+```text
+BITGET_BASE_URL=https://api.bitget.com
+BITGET_AGENT_HUB_MCP_URL=
+BITGET_API_KEY=
+SWARMS_API_KEY=
+SWARMS_ADD_AGENT_URL=
+```
 
 ## Repository Structure
 

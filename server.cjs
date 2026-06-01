@@ -5,7 +5,8 @@ const path = require("path");
 const { URL } = require("url");
 
 const root = __dirname;
-const dataDir = path.join(root, "data");
+const seedDataDir = path.join(root, "data");
+const dataDir = process.env.MEMORYALPHA_DATA_DIR || (process.env.VERCEL ? path.join("/tmp", "memoryalpha-data") : seedDataDir);
 const memoryFile = path.join(dataDir, "memories.json");
 const importFile = path.join(dataDir, "imports.json");
 const decisionFile = path.join(dataDir, "decisions.json");
@@ -65,10 +66,15 @@ function normalizeSymbol(symbol) {
 
 function ensureDataFile() {
   fs.mkdirSync(dataDir, { recursive: true });
-  if (!fs.existsSync(memoryFile)) fs.writeFileSync(memoryFile, "[]\n");
-  if (!fs.existsSync(importFile)) fs.writeFileSync(importFile, "[]\n");
-  if (!fs.existsSync(decisionFile)) fs.writeFileSync(decisionFile, "[]\n");
-  if (!fs.existsSync(executionFile)) fs.writeFileSync(executionFile, "[]\n");
+  [
+    [memoryFile, path.join(seedDataDir, "memories.json")],
+    [importFile, path.join(seedDataDir, "imports.json")],
+    [decisionFile, path.join(seedDataDir, "decisions.json")],
+    [executionFile, path.join(seedDataDir, "executions.json")],
+  ].forEach(([target, seed]) => {
+    if (fs.existsSync(target)) return;
+    fs.writeFileSync(target, fs.existsSync(seed) ? fs.readFileSync(seed, "utf8") : "[]\n");
+  });
 }
 
 function readMemories() {
@@ -1212,4 +1218,10 @@ function listen(port, attemptsLeft = 10) {
   });
 }
 
-listen(startPort);
+if (require.main === module) {
+  listen(startPort);
+}
+
+module.exports = {
+  handleApi,
+};

@@ -1,0 +1,13 @@
+{
+  "name": "memory-alpha",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Agent-memory market for autonomous trading systems.",
+  "scripts": {
+    "start": "node server.cjs",
+    "verify": "node verify.cjs"
+  },
+  "engines": {
+    "node": "22.x"
+  }
+}
