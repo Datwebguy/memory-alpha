@@ -1,0 +1,22 @@
+[
+  {
+    "id": "1780241194100:a1dd09b48092d8",
+    "createdAt": "2026-05-31T15:26:34.100Z",
+    "status": "closed",
+    "decisionId": "1780240745022:5d12345682868",
+    "agentId": "risk-warden",
+    "agentName": "Risk Warden",
+    "memoryId": "risk-warden:BTCUSDT:1h:1779876000000:1780232400000",
+    "symbol": "BTCUSDT",
+    "regime": "range",
+    "action": "hold",
+    "side": "long",
+    "entryPrice": 74000,
+    "stopPrice": 72500,
+    "size": 0.01,
+    "riskAmount": 15,
+    "exitPrice": 74500,
+    "pnl": 5,
+    "closedAt": "2026-05-31T15:26:34.109Z"
+  }
+]

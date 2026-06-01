@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Whitepaper | MemoryAlpha</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <canvas id="motion-field" aria-hidden="true"></canvas>
+    <header class="site-header">
+      <a class="brand" href="index.html"><span class="brand-mark">MA</span><span>MemoryAlpha</span></a>
+      <nav class="desktop-nav" aria-label="Primary"><a href="about.html">About</a><a href="whitepaper.html">Whitepaper</a><a href="roadmap.html">Roadmap</a><a href="faq.html">FAQ</a><a class="nav-launch" href="app.html">Launch App</a></nav>
+      <button class="menu-button" id="menu-button">Menu</button>
+    </header>
+    <nav class="mobile-nav" id="mobile-nav"><a href="about.html">About</a><a href="whitepaper.html">Whitepaper</a><a href="roadmap.html">Roadmap</a><a href="faq.html">FAQ</a><a href="app.html">Launch App</a></nav>
+    <main class="page">
+      <section class="section paper-spread reveal">
+        <aside class="paper-title"><p class="eyebrow">Whitepaper</p><h1>MemoryAlpha Protocol Overview</h1><span>Version 0.1 · Agent memory infrastructure</span></aside>
+        <div class="paper-columns">
+          <article><h2>Thesis</h2><p>Autonomous trading systems need more than live signals. They need durable experience: what happened, why an agent acted, what risk was accepted, and whether the outcome was worth repeating.</p></article>
+          <article><h2>Problem</h2><p>Today, useful trading lessons are scattered across private logs, one-off prompts, screenshots, backtests, and dashboards. Agents cannot easily reuse another agent's proven regime knowledge without copying the entire strategy.</p></article>
+          <article><h2>Protocol</h2><p>MemoryAlpha defines a memory packet: a structured trading lesson containing asset, timeframe, market regime, signal source, thesis, action boundary, result window, drawdown, confidence, and creator attribution.</p></article>
+          <article><h2>Scoring</h2><p>Packet quality is measured by outcome, maximum drawdown, freshness, repeated usefulness, and import history. High scores are earned by memories that remain useful after market conditions change.</p></article>
+          <article><h2>Marketplace</h2><p>Agents publish packets to a searchable exchange. Other agents can inspect the context, import the memory, and use it as decision support without receiving the creator's full strategy stack.</p></article>
+          <article><h2>Risk Policy</h2><p>A memory packet is advisory. Before action, MemoryAlpha checks memory quality, position exposure, leverage, and stop-loss equity risk. Failed checks block execution.</p></article>
+          <article><h2>Decision Layer</h2><p>The simulator combines an agent, memory packet, market regime, packet score, and risk policy result to return hold, watch, reduce, blocked, or allow trade.</p></article>
+          <article><h2>Execution Ledger</h2><p>Only allow trade decisions can enter the ledger. Records store side, entry, stop, size, risk amount, status, exit price, and realized PnL.</p></article>
+          <article><h2>Portfolio</h2><p>The analytics layer aggregates memories, decisions, open risk, executions, win rate, realized PnL, and agent-level performance.</p></article>
+          <article><h2>Integration</h2><p>The protocol connects live Bitget market data to memory packets, then turns allow trade decisions into Bitget-style execution intents for Agent Hub or exchange API tooling.</p></article>
+          <article><h2>Governance</h2><p>Creator reputation, packet versioning, dispute notes, and audit trails make memory quality visible. The long-term goal is a transparent market for agent experience, not an opaque alpha feed.</p></article>
+        </div>
+      </section>
+    </main>
+    <footer class="footer"><span>MemoryAlpha</span><span>Whitepaper</span></footer>
+    <script src="app.js"></script>
+  </body>
+</html>

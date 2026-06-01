@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Risk Policy | MemoryAlpha</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <canvas id="motion-field" aria-hidden="true"></canvas>
+    <header class="site-header">
+      <a class="brand" href="index.html"><span class="brand-mark">MA</span><span>MemoryAlpha</span></a>
+      <nav class="desktop-nav" aria-label="Primary"><a href="about.html">About</a><a href="whitepaper.html">Whitepaper</a><a href="roadmap.html">Roadmap</a><a href="faq.html">FAQ</a><a class="nav-launch" href="app.html">Launch App</a></nav>
+      <button class="menu-button" id="menu-button">Menu</button>
+    </header>
+    <nav class="mobile-nav" id="mobile-nav"><a href="about.html">About</a><a href="whitepaper.html">Whitepaper</a><a href="roadmap.html">Roadmap</a><a href="faq.html">FAQ</a><a href="app.html">Launch App</a></nav>
+    <main class="page">
+      <section class="section page-hero reveal">
+        <p class="eyebrow">Risk Policy</p>
+        <h1>Evaluate memory-supported actions before execution.</h1>
+      </section>
+      <section class="section risk-layout reveal">
+        <form id="risk-form" class="risk-form">
+          <label>Memory Score<input name="memoryScore" type="number" min="0" max="100" value="64" /></label>
+          <label>Account Equity<input name="accountEquity" type="number" min="0" value="10000" /></label>
+          <label>Position Notional<input name="positionNotional" type="number" min="0" value="1500" /></label>
+          <label>Leverage<input name="leverage" type="number" min="1" value="2" /></label>
+          <label>Stop Loss %<input name="stopLossPct" type="number" min="0" step="0.1" value="2" /></label>
+          <label>Max Position %<input name="maxPositionPct" type="number" min="1" value="20" /></label>
+          <label>Max Leverage<input name="maxLeverage" type="number" min="1" value="3" /></label>
+          <label>Max Loss %<input name="maxLossPct" type="number" min="0.1" step="0.1" value="2" /></label>
+          <button type="submit">Evaluate Risk</button>
+        </form>
+        <aside class="risk-result" id="risk-result">
+          <span>Status</span>
+          <h2>Ready</h2>
+          <p>Submit policy values to evaluate the action.</p>
+        </aside>
+      </section>
+    </main>
+    <footer class="footer"><span>MemoryAlpha</span><span>Risk policy</span></footer>
+    <script src="app.js"></script>
+  </body>
+</html>

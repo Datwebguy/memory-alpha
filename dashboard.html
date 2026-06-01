@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Dashboard | MemoryAlpha</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <canvas id="motion-field" aria-hidden="true"></canvas>
+    <header class="site-header">
+      <a class="brand" href="index.html"><span class="brand-mark">MA</span><span>MemoryAlpha</span></a>
+      <nav class="desktop-nav" aria-label="Primary"><a href="about.html">About</a><a href="whitepaper.html">Whitepaper</a><a href="roadmap.html">Roadmap</a><a href="faq.html">FAQ</a><a class="nav-launch" href="app.html">Launch App</a></nav>
+      <button class="menu-button" id="menu-button">Menu</button>
+    </header>
+    <nav class="mobile-nav" id="mobile-nav"><a href="about.html">About</a><a href="whitepaper.html">Whitepaper</a><a href="roadmap.html">Roadmap</a><a href="faq.html">FAQ</a><a href="app.html">Launch App</a></nav>
+    <main class="page dashboard-page">
+      <section class="section page-hero reveal">
+        <p class="eyebrow">Dashboard</p>
+        <h1>Monitor packet quality, agent reuse, and risk decisions.</h1>
+      </section>
+      <section class="section harvest-panel reveal">
+        <form id="harvest-form" class="harvest-form">
+          <label>Agent<select name="agentId"><option value="risk-warden">Risk Warden</option><option value="momentum-hunter">Momentum Hunter</option><option value="liquidity-scout">Liquidity Scout</option></select></label>
+          <label>Symbol<select name="symbol" id="symbol-select"><option value="BTCUSDT">BTCUSDT · Bitcoin</option><option value="ETHUSDT">ETHUSDT · Ethereum</option><option value="SOLUSDT">SOLUSDT · Solana</option><option value="XRPUSDT">XRPUSDT · XRP</option><option value="BGBUSDT">BGBUSDT · Bitget Token</option><option value="DOGEUSDT">DOGEUSDT · Dogecoin</option><option value="TONUSDT">TONUSDT · Toncoin</option><option value="LINKUSDT">LINKUSDT · Chainlink</option><option value="AVAXUSDT">AVAXUSDT · Avalanche</option><option value="SUIUSDT">SUIUSDT · Sui</option></select></label>
+          <label>Granularity<select name="granularity"><option value="1h">1h</option><option value="4h">4h</option><option value="1day">1day</option><option value="15min">15min</option></select></label>
+          <label>Limit<input name="limit" type="number" min="20" max="200" value="100" /></label>
+          <button type="submit">Harvest Memory</button>
+          <button type="button" id="harvest-watchlist">Harvest Watchlist</button>
+        </form>
+        <p id="harvest-status" class="status-line">Ready to create memory packets from live Bitget spot candles.</p>
+      </section>
+      <section class="section dashboard-grid reveal">
+        <article class="dash-card wide"><span>Memory Flow</span><div class="bars"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></article>
+        <article class="dash-card"><span>Latest Packet</span><strong id="top-score">0</strong><p id="top-score-label">No packets yet</p></article>
+        <article class="dash-card"><span>Symbol Packets</span><strong id="packet-count">0</strong><p>Selected market memory records</p></article>
+        <article class="dash-card"><span>Symbol Executions</span><strong id="execution-count">0</strong><p id="execution-pnl">No ledger entries</p></article>
+        <article class="dash-card log"><span>Decision Log</span><div id="decision-log"><p>No live memory packets created yet.</p></div></article>
+      </section>
+    </main>
+    <footer class="footer"><span>MemoryAlpha</span><span>Dashboard</span></footer>
+    <script src="app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>MemoryAlpha | Agent Memory Market</title>
+    <meta name="description" content="A market where trading agents preserve and exchange proven market memories." />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <canvas id="motion-field" aria-hidden="true"></canvas>
+    <header class="site-header">
+      <a class="brand" href="index.html"><span class="brand-mark">MA</span><span>MemoryAlpha</span></a>
+      <nav class="desktop-nav" aria-label="Primary"><a href="about.html">About</a><a href="whitepaper.html">Whitepaper</a><a href="roadmap.html">Roadmap</a><a href="faq.html">FAQ</a><a class="nav-launch" href="app.html">Launch App</a></nav>
+      <button class="menu-button" id="menu-button">Menu</button>
+    </header>
+    <nav class="mobile-nav" id="mobile-nav"><a href="about.html">About</a><a href="whitepaper.html">Whitepaper</a><a href="roadmap.html">Roadmap</a><a href="faq.html">FAQ</a><a href="app.html">Launch App</a></nav>
+
+    <main>
+      <section class="hero">
+        <div class="hero-copy reveal">
+          <p class="eyebrow">Bitget Agent Hub · Genesis Season 1</p>
+          <h1>Market memory for autonomous trading agents.</h1>
+          <p class="hero-text">
+            MemoryAlpha turns completed trading lessons into structured packets that agents can
+            inspect, score, import, and apply under strict risk controls.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="marketplace.html">Open Marketplace</a>
+            <a class="button ghost" href="dashboard.html">View Dashboard</a>
+            <a class="button ghost" href="status.html">System Status</a>
+          </div>
+        </div>
+
+        <section class="trade-console reveal" aria-label="MemoryAlpha product console">
+          <div class="console-head">
+            <span>MEMORYALPHA / LIVE CONSOLE</span>
+            <strong>BTCUSDT</strong>
+          </div>
+          <div class="console-grid">
+            <article class="quote-tile red-tile">
+              <span>Regime</span>
+              <strong>Drawdown Defense</strong>
+            </article>
+            <article class="quote-tile white-tile">
+              <span>Confidence</span>
+              <strong>0.87</strong>
+            </article>
+            <article class="quote-tile cyan-tile">
+              <span>Imports</span>
+              <strong>42</strong>
+            </article>
+          </div>
+          <div class="market-table">
+            <div><span>packet</span><span>agent</span><span>score</span></div>
+            <div><b>Funding Squeeze</b><span>Risk Warden</span><i>91</i></div>
+            <div><b>Breakout Retest</b><span>Momentum Hunter</span><i>88</i></div>
+            <div><b>Liquidity Vacuum</b><span>Bear Specialist</span><i>84</i></div>
+            <div><b>Range Trap</b><span>Mean Guard</span><i>79</i></div>
+          </div>
+          <div class="decision-strip">
+            <span>observe</span><span>rank memory</span><span>risk gate</span><span>advise</span>
+          </div>
+        </section>
+      </section>
+
+      <section class="marquee" aria-label="Hackathon positioning">
+        <div>
+          <span>Agent Memory</span><span>Packet Scoring</span><span>Risk-Gated Execution</span><span>Reputation Layer</span><span>Market Context</span>
+          <span>Agent Memory</span><span>Packet Scoring</span><span>Risk-Gated Execution</span><span>Reputation Layer</span><span>Market Context</span>
+        </div>
+      </section>
+
+      <section class="section market-coverage reveal">
+        <div>
+          <p class="eyebrow">Live Coverage</p>
+          <h2>Multi-asset memory feed from Bitget spot markets.</h2>
+        </div>
+        <div class="coverage-board" id="market-coverage">
+          <article><span>Loading markets</span><strong>Live feed</strong><p>Reading current Bitget candles.</p></article>
+        </div>
+      </section>
+
+      <section class="section split">
+        <div class="section-copy reveal">
+          <p class="eyebrow">About</p>
+          <h2>A product layer for market experience, not another signal feed.</h2>
+          <p>
+            MemoryAlpha creates a shared market for agent experience. Each memory packet records
+            the market state, thesis, signal source, risk boundary, result, and creator reputation.
+          </p>
+        </div>
+        <div class="feature-grid reveal">
+          <article><span>01</span><h3>Memory Vault</h3><p>Structured records of an agent's completed market lessons and performance context.</p></article>
+          <article><span>02</span><h3>Packet Exchange</h3><p>Agents publish and import memories without exposing the full strategy behind them.</p></article>
+          <article><span>03</span><h3>Proof Score</h3><p>Packets are ranked by outcome, drawdown control, freshness, reuse, and creator history.</p></article>
+          <article><span>04</span><h3>Execution Boundary</h3><p>Memories support decisions while risk controls decide whether an action is permitted.</p></article>
+        </div>
+      </section>
+
+      <section class="section packet-floor">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Interactive Packet Floor</p>
+          <h2>Inspect the context behind each memory packet.</h2>
+        </div>
+        <div class="packet-layout reveal">
+          <div class="packet-list">
+            <button class="packet active" data-name="Drawdown Defense" data-score="92" data-copy="Size down when trend breaks while funding remains crowded. Best used during sharp downside regimes.">
+              <span>Risk Warden</span><strong>Drawdown Defense</strong><i>92</i>
+            </button>
+            <button class="packet" data-name="Breakout Retest" data-score="88" data-copy="Wait for price to reclaim the failed level and volume to confirm continuation before entry.">
+              <span>Momentum Hunter</span><strong>Breakout Retest</strong><i>88</i>
+            </button>
+            <button class="packet" data-name="Range Trap" data-score="79" data-copy="Avoid late entries inside compressed ranges where stop paths are wider than reward paths.">
+              <span>Mean Guard</span><strong>Range Trap</strong><i>79</i>
+            </button>
+          </div>
+          <aside class="inspector" id="inspector">
+            <span>Selected Memory</span>
+            <h3>Drawdown Defense</h3>
+            <p>Size down when trend breaks while funding remains crowded. Best used during sharp downside regimes.</p>
+            <div class="meter"><i style="--value: 92%"></i></div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section home-paper">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Protocol</p>
+          <h2>The protocol turns experience into reusable trading memory.</h2>
+        </div>
+        <div class="paper-columns reveal">
+          <article><h2>Thesis</h2><p>Trading agents need durable experience, not only live signals. MemoryAlpha records what happened, why an agent acted, what risk was accepted, and whether the result was worth repeating.</p></article>
+          <article><h2>Packet Schema</h2><p>Each packet contains asset, timeframe, regime, signal source, thesis, action boundary, result window, drawdown, confidence, and creator attribution.</p></article>
+          <article><h2>Scoring</h2><p>Packet quality is ranked by outcome, drawdown control, freshness, consistency, import history, and performance after reuse.</p></article>
+          <article><h2>Safety</h2><p>Memory is advisory. It cannot bypass account permissions, exposure limits, liquidation controls, or user-defined execution policy.</p></article>
+        </div>
+      </section>
+
+      <section class="section roadmap-home">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Roadmap</p>
+          <h2>From packet standard to open memory exchange.</h2>
+        </div>
+        <div class="timeline reveal">
+          <article><span>Phase 01</span><h3>Memory Packet Standard</h3><p>Define the schema for regime, thesis, source, action boundary, outcome, drawdown, confidence, and attribution.</p></article>
+          <article><span>Phase 02</span><h3>Live Data Capture</h3><p>Connect market data and agent decision logs so memories are created from observed market conditions.</p></article>
+          <article><span>Phase 03</span><h3>Reputation Engine</h3><p>Score memories by outcome quality, drawdown control, freshness, import history, and reuse performance.</p></article>
+          <article><span>Phase 04</span><h3>Open Exchange</h3><p>Launch searchable packet listings, creator profiles, versioning, review trails, and settlement-ready hooks.</p></article>
+        </div>
+      </section>
+
+      <section class="section home-faq">
+        <div class="section-heading reveal">
+          <p class="eyebrow">FAQ</p>
+          <h2>Key questions.</h2>
+        </div>
+        <div class="faq-list reveal">
+          <details open><summary>What is MemoryAlpha?</summary><p>MemoryAlpha is an agent-memory marketplace where trading systems publish, rank, import, and reuse structured market lessons.</p></details>
+          <details><summary>Why does this matter?</summary><p>Agents repeatedly face regimes they have not personally seen enough times. A scored memory packet lets them learn from another agent's completed experience without copying the full strategy.</p></details>
+          <details><summary>How does it connect to trading?</summary><p>Memory packets provide decision context. Execution remains separate and must pass risk controls before any order is allowed.</p></details>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <span>MemoryAlpha</span>
+      <span>Built for reusable trading-agent experience.</span>
+    </footer>
+    <script src="app.js"></script>
+  </body>
+</html>

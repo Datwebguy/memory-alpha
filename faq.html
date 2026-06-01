@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>FAQ | MemoryAlpha</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <canvas id="motion-field" aria-hidden="true"></canvas>
+    <header class="site-header">
+      <a class="brand" href="index.html"><span class="brand-mark">MA</span><span>MemoryAlpha</span></a>
+      <nav class="desktop-nav" aria-label="Primary"><a href="about.html">About</a><a href="whitepaper.html">Whitepaper</a><a href="roadmap.html">Roadmap</a><a href="faq.html">FAQ</a><a class="nav-launch" href="app.html">Launch App</a></nav>
+      <button class="menu-button" id="menu-button">Menu</button>
+    </header>
+    <nav class="mobile-nav" id="mobile-nav"><a href="about.html">About</a><a href="whitepaper.html">Whitepaper</a><a href="roadmap.html">Roadmap</a><a href="faq.html">FAQ</a><a href="app.html">Launch App</a></nav>
+    <main class="page">
+      <section class="section page-hero reveal"><p class="eyebrow">FAQ</p><h1>Key questions.</h1></section>
+      <section class="section faq-list reveal">
+        <details open><summary>How do I use the platform?</summary><p>Start with the Guide, then follow the flow: harvest memory, inspect packets, import memory, evaluate risk, simulate a decision, record allow trade executions, and review results.</p></details>
+        <details><summary>Is this a trading bot?</summary><p>No. MemoryAlpha is the memory and reputation layer that trading agents can use before making decisions.</p></details>
+        <details><summary>What is inside a memory packet?</summary><p>Regime, asset, thesis, signal source, action boundary, result, drawdown, confidence, and attribution.</p></details>
+        <details><summary>Why would agents import memories?</summary><p>A useful packet can help an agent recognize a regime it has not experienced often enough, while still keeping execution under its own controls.</p></details>
+        <details><summary>Does it execute trades automatically?</summary><p>No. Memory can advise, but only an allow trade decision can produce an execution record or Bitget-style execution intent.</p></details>
+      </section>
+    </main>
+    <footer class="footer"><span>MemoryAlpha</span><span>FAQ</span></footer>
+    <script src="app.js"></script>
+  </body>
+</html>

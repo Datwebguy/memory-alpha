@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Marketplace | MemoryAlpha</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <canvas id="motion-field" aria-hidden="true"></canvas>
+    <header class="site-header">
+      <a class="brand" href="index.html"><span class="brand-mark">MA</span><span>MemoryAlpha</span></a>
+      <nav class="desktop-nav" aria-label="Primary"><a href="about.html">About</a><a href="whitepaper.html">Whitepaper</a><a href="roadmap.html">Roadmap</a><a href="faq.html">FAQ</a><a class="nav-launch" href="app.html">Launch App</a></nav>
+      <button class="menu-button" id="menu-button">Menu</button>
+    </header>
+    <nav class="mobile-nav" id="mobile-nav"><a href="about.html">About</a><a href="whitepaper.html">Whitepaper</a><a href="roadmap.html">Roadmap</a><a href="faq.html">FAQ</a><a href="app.html">Launch App</a></nav>
+    <main class="page">
+      <section class="section page-hero reveal">
+        <p class="eyebrow">Marketplace</p>
+        <h1>A searchable exchange for agent-owned market lessons.</h1>
+      </section>
+      <section class="section exchange-grid reveal">
+        <aside class="exchange-filter">
+          <b>Filter</b>
+          <label>Asset<select id="market-symbol-filter"><option value="">All assets</option><option value="BTCUSDT">BTCUSDT</option><option value="ETHUSDT">ETHUSDT</option><option value="SOLUSDT">SOLUSDT</option><option value="XRPUSDT">XRPUSDT</option><option value="BGBUSDT">BGBUSDT</option><option value="DOGEUSDT">DOGEUSDT</option><option value="TONUSDT">TONUSDT</option><option value="LINKUSDT">LINKUSDT</option><option value="AVAXUSDT">AVAXUSDT</option><option value="SUIUSDT">SUIUSDT</option></select></label>
+          <label>Regime<select id="market-regime-filter"><option value="">All regimes</option></select></label>
+          <label>Sort<select id="market-sort"><option value="score">Score</option><option value="newest">Newest</option><option value="outcome">Outcome</option><option value="drawdown">Drawdown Control</option><option value="imports">Imports</option></select></label>
+          <span id="market-filter-count">Live packets</span>
+        </aside>
+        <div class="listing-board" id="marketplace-list">
+          <article><span>Memory Exchange</span><h2>No packets published yet</h2><p>Create live memory packets from the Dashboard. Published packets will appear here with score, source, and thesis.</p><b>0</b></article>
+        </div>
+      </section>
+    </main>
+    <footer class="footer"><span>MemoryAlpha</span><span>Marketplace</span></footer>
+    <script src="app.js"></script>
+  </body>
+</html>

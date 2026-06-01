@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Executions | MemoryAlpha</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <canvas id="motion-field" aria-hidden="true"></canvas>
+    <header class="site-header">
+      <a class="brand" href="index.html"><span class="brand-mark">MA</span><span>MemoryAlpha</span></a>
+      <nav class="desktop-nav" aria-label="Primary"><a href="about.html">About</a><a href="whitepaper.html">Whitepaper</a><a href="roadmap.html">Roadmap</a><a href="faq.html">FAQ</a><a class="nav-launch" href="app.html">Launch App</a></nav>
+      <button class="menu-button" id="menu-button">Menu</button>
+    </header>
+    <nav class="mobile-nav" id="mobile-nav"><a href="about.html">About</a><a href="whitepaper.html">Whitepaper</a><a href="roadmap.html">Roadmap</a><a href="faq.html">FAQ</a><a href="app.html">Launch App</a></nav>
+    <main class="page">
+      <section class="section page-hero reveal">
+        <p class="eyebrow">Execution Ledger</p>
+        <h1>Record execution entries after allow trade decisions.</h1>
+      </section>
+      <section class="section execution-layout reveal">
+        <form id="execution-form" class="risk-form">
+          <label>Decision<select name="decisionId" id="execution-decision"></select></label>
+          <label>Side<select name="side"><option value="long">Long</option><option value="short">Short</option></select></label>
+          <label>Entry Price<input name="entryPrice" type="number" min="0" step="0.01" value="74000" /></label>
+          <label>Stop Price<input name="stopPrice" type="number" min="0" step="0.01" value="72500" /></label>
+          <label>Size<input name="size" type="number" min="0" step="0.0001" value="0.01" /></label>
+          <button type="submit">Record Execution</button>
+        </form>
+        <div class="execution-board" id="execution-board">
+          <article><span>Ledger</span><h2>No executions yet</h2><p>Allow trade decisions can be recorded here with entry, stop, size, risk, and exit.</p></article>
+        </div>
+      </section>
+    </main>
+    <footer class="footer"><span>MemoryAlpha</span><span>Execution ledger</span></footer>
+    <script src="app.js"></script>
+  </body>
+</html>

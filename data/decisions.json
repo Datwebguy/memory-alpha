@@ -1,0 +1,42 @@
+[
+  {
+    "id": "1780240745022:5d12345682868",
+    "createdAt": "2026-05-31T15:19:05.022Z",
+    "agentId": "risk-warden",
+    "agentName": "Risk Warden",
+    "memoryId": "risk-warden:BTCUSDT:1h:1779876000000:1780232400000",
+    "symbol": "BTCUSDT",
+    "regime": "range",
+    "score": 64,
+    "action": "hold",
+    "rationale": "Memory is useful, but regime quality does not justify immediate execution.",
+    "risk": {
+      "allowed": true,
+      "decision": "approved",
+      "exposurePct": 15,
+      "lossAtStopPct": 0.3,
+      "checks": [
+        {
+          "name": "Memory quality",
+          "pass": true,
+          "detail": "Score 64; minimum 60."
+        },
+        {
+          "name": "Exposure limit",
+          "pass": true,
+          "detail": "15.00% exposure; limit 20.00%."
+        },
+        {
+          "name": "Leverage limit",
+          "pass": true,
+          "detail": "2.00x leverage; limit 3.00x."
+        },
+        {
+          "name": "Stop-loss risk",
+          "pass": true,
+          "detail": "0.30% equity at stop; limit 2.00%."
+        }
+      ]
+    }
+  }
+]

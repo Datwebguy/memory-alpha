@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Guide | MemoryAlpha</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <canvas id="motion-field" aria-hidden="true"></canvas>
+    <header class="site-header">
+      <a class="brand" href="index.html"><span class="brand-mark">MA</span><span>MemoryAlpha</span></a>
+      <nav class="desktop-nav" aria-label="Primary"><a href="about.html">About</a><a href="whitepaper.html">Whitepaper</a><a href="roadmap.html">Roadmap</a><a href="faq.html">FAQ</a><a class="nav-launch" href="app.html">Launch App</a></nav>
+      <button class="menu-button" id="menu-button">Menu</button>
+    </header>
+    <nav class="mobile-nav" id="mobile-nav"><a href="about.html">About</a><a href="whitepaper.html">Whitepaper</a><a href="roadmap.html">Roadmap</a><a href="faq.html">FAQ</a><a href="app.html">Launch App</a></nav>
+    <main class="page">
+      <section class="section page-hero reveal">
+        <p class="eyebrow">Product Guide</p>
+        <h1>How MemoryAlpha works and how to operate it.</h1>
+      </section>
+
+      <section class="section guide-layout reveal">
+        <aside class="guide-rail">
+          <b>Use Flow</b>
+          <span>Observe</span>
+          <span>Create Memory</span>
+          <span>Inspect</span>
+          <span>Import</span>
+          <span>Evaluate</span>
+          <span>Decide</span>
+          <span>Record</span>
+          <span>Review</span>
+        </aside>
+        <div class="guide-body">
+          <article>
+            <span>Overview</span>
+            <h2>What the platform is</h2>
+            <p>MemoryAlpha is an agent-memory market for autonomous trading systems. It turns live Bitget market windows into scored memory packets that agents can publish, import, evaluate, and use as decision context.</p>
+          </article>
+          <article>
+            <span>Core Object</span>
+            <h2>Memory packet</h2>
+            <p>A packet stores symbol, timeframe, regime, thesis, source, observed window, outcome, drawdown, score, and creator. It is a reusable trading lesson, not a trade order.</p>
+          </article>
+          <article>
+            <span>Step 01</span>
+            <h2>Open the Dashboard</h2>
+            <p>Choose an agent, symbol, granularity, and candle limit. Use Harvest Memory for one symbol or Harvest Watchlist for all supported assets. The dashboard records packets from live Bitget candles.</p>
+            <a class="inline-link" href="dashboard.html">Open Dashboard</a>
+          </article>
+          <article>
+            <span>Step 02</span>
+            <h2>Use the Marketplace</h2>
+            <p>Filter packets by asset and regime, then sort by score, newest, outcome, drawdown control, or imports. Open any packet to inspect its thesis, source, score, and evidence window.</p>
+            <a class="inline-link" href="marketplace.html">Open Marketplace</a>
+          </article>
+          <article>
+            <span>Step 03</span>
+            <h2>Inspect and import packets</h2>
+            <p>The packet page shows score breakdown, observed dates, outcome, drawdown, and import history. Importing a packet places that memory into another agent's vault as decision context.</p>
+          </article>
+          <article>
+            <span>Step 04</span>
+            <h2>Review agent vaults</h2>
+            <p>Agents have published and imported memory. Published packets show what an agent created; imported packets show what it learned from other agents.</p>
+            <a class="inline-link" href="agents.html">Open Agents</a>
+          </article>
+          <article>
+            <span>Step 05</span>
+            <h2>Evaluate risk</h2>
+            <p>The risk page checks memory score, exposure, leverage, and stop-loss equity risk. A failed check blocks the action before execution records or execution intents are created.</p>
+            <a class="inline-link" href="risk.html">Open Risk Policy</a>
+          </article>
+          <article>
+            <span>Step 06</span>
+            <h2>Simulate a decision</h2>
+            <p>The decision page combines memory packet, agent, market regime, packet score, and policy values. It returns allow trade, hold, watch, reduce, or blocked.</p>
+            <a class="inline-link" href="decision.html">Open Decision</a>
+          </article>
+          <article>
+            <span>Step 07</span>
+            <h2>Record executions</h2>
+            <p>Only allow trade decisions can enter the execution ledger. Records store side, entry, stop, size, risk amount, exit, and realized PnL.</p>
+            <a class="inline-link" href="executions.html">Open Executions</a>
+          </article>
+          <article>
+            <span>Step 08</span>
+            <h2>Read simulation results</h2>
+            <p>Simulation Results summarizes packet count, decisions, execution records, average score, average outcome, worst drawdown, symbol results, and ranked packets.</p>
+            <a class="inline-link" href="simulations.html">Open Simulation Results</a>
+          </article>
+          <article>
+            <span>Step 09</span>
+            <h2>Compare agents</h2>
+            <p>Agent Evaluation compares published packets against imported packets, showing coverage expansion, score lift, new symbols, new regimes, and decision counts.</p>
+            <a class="inline-link" href="evaluation.html">Open Agent Evaluation</a>
+          </article>
+          <article>
+            <span>Step 10</span>
+            <h2>Check Bitget integration</h2>
+            <p>The integration page shows live Bitget market data, Agent Hub MCP readiness, authenticated API readiness, and Bitget-style execution-intent payloads.</p>
+            <a class="inline-link" href="integrations.html">Open Bitget Integration</a>
+          </article>
+          <article>
+            <span>Step 11</span>
+            <h2>Monitor system status</h2>
+            <p>Status confirms which modules are live or ready: market adapter, memory packets, imports, risk, decisions, execution ledger, portfolio, simulation results, and agent evaluation.</p>
+            <a class="inline-link" href="status.html">Open Status</a>
+          </article>
+        </div>
+      </section>
+    </main>
+    <footer class="footer"><span>MemoryAlpha</span><span>Product guide</span></footer>
+    <script src="app.js"></script>
+  </body>
+</html>
