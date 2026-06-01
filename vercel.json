@@ -33,6 +33,10 @@
       "use": "@vercel/static"
     },
     {
+      "src": "assets/*.png",
+      "use": "@vercel/static"
+    },
+    {
       "src": "*.md",
       "use": "@vercel/static"
     }
