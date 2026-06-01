@@ -157,7 +157,12 @@ async function api(path, options = {}) {
       ...options,
     });
   } catch {
-    throw new Error("API unreachable. Open http://127.0.0.1:4260/index.html and keep preview.cmd running.");
+    const local = window.location.protocol === "file:" || window.location.hostname === "127.0.0.1";
+    throw new Error(
+      local
+        ? "API unreachable. Open http://127.0.0.1:4260/index.html and keep preview.cmd running."
+        : "API unreachable. Reload the page or check /api/health on this deployment."
+    );
   }
   const payload = await response.json();
   if (!response.ok || payload.error) throw new Error(payload.error || "Request failed");
