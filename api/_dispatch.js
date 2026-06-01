@@ -7,7 +7,7 @@ function jsonError(res, error) {
 function dispatch(fallbackPath) {
   return async function handler(req, res) {
     try {
-      const { handleApi } = require("../server.cjs");
+      const { handleApi } = require("../memoryalpha.cjs");
       const protocol = req.headers["x-forwarded-proto"] || "https";
       const host = req.headers.host || "memoryalpha.vercel.app";
       const incoming = new URL(req.url || fallbackPath, `${protocol}://${host}`);

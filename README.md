@@ -392,7 +392,7 @@ Vercel deployment shape:
 
 - Static HTML, CSS, client JavaScript, SVG, and docs are served as static files.
 - `/api/[...path].js` forwards API requests into the same `handleApi` function used by the local server.
-- `server.cjs` still runs locally with `preview.cmd`, but it no longer starts a listener when imported by Vercel.
+- `memoryalpha.cjs` still runs locally with `preview.cmd`, but it no longer starts a listener when imported by Vercel.
 - Seed data files in `data/**` are included in the serverless function bundle.
 - On Vercel, writeable runtime state uses `/tmp/memoryalpha-data` through the `VERCEL` environment flag.
 
@@ -442,7 +442,7 @@ SWARMS_ADD_AGENT_URL=
 ├── faq.html
 ├── client.js
 ├── styles.css
-├── server.cjs
+├── memoryalpha.cjs
 ├── verify.cjs
 ├── data/
 │   ├── memories.json

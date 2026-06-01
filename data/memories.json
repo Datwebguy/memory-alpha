@@ -1,5 +1,32 @@
 [
   {
+    "id": "risk-warden:SOLUSDT:1h:1780236000000:1780304400000",
+    "agentId": "risk-warden",
+    "agentName": "Risk Warden",
+    "symbol": "SOLUSDT",
+    "granularity": "1h",
+    "source": "bitget-spot-candles",
+    "thesis": "SOLUSDT on 1h formed a range memory with -1.02% outcome and -3.19% max drawdown; directional edge is limited until price leaves the current range.",
+    "createdAt": "2026-06-01T09:03:53.667Z",
+    "imports": 0,
+    "regime": "range",
+    "score": 35,
+    "scoreBreakdown": {
+      "outcome": 3,
+      "drawdownControl": 20,
+      "volatilitySignal": 3,
+      "regimeClarity": 8,
+      "evidenceDepth": 1
+    },
+    "outcomePct": -1.0247651579846326,
+    "maxDrawdownPct": -3.1885453014077796,
+    "avgMovePct": 0.42617432633060054,
+    "priceStart": 81.97,
+    "priceEnd": 81.13,
+    "observedFrom": 1780236000000,
+    "observedTo": 1780304400000
+  },
+  {
     "id": "risk-warden:SOLUSDT:1h:1780232400000:1780300800000",
     "agentId": "risk-warden",
     "agentName": "Risk Warden",
