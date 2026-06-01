@@ -440,7 +440,7 @@ SWARMS_ADD_AGENT_URL=
 ├── whitepaper.html
 ├── roadmap.html
 ├── faq.html
-├── app.js
+├── client.js
 ├── styles.css
 ├── server.cjs
 ├── verify.cjs
