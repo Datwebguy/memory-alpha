@@ -1,3 +1,3 @@
 const { dispatch } = require("./_dispatch");
 
-module.exports = dispatch("/api/health");
+module.exports = dispatch("/api/status");
